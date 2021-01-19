@@ -1,0 +1,10 @@
+.container
+	.row
+		.col-4.offset-sm-4
+			h1 Login
+			.form-group
+				input.form-control("[(ngModel)]"="authenticationService.user.email")
+			.form-group
+				input.form-control("[(ngModel)]"="authenticationService.user.password" type="password")
+			.form-group
+				button.btn.btn-primary("(click)"="authenticationService.login()") Login

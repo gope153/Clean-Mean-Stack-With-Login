@@ -1,0 +1,18 @@
+#splash1.splash.d-none.d-sm-none.d-md-none.d-lg-block
+nav.navbar.navbar-expand-lg.navbar-custom
+	.container
+		a.navbar-brand(routerLink="/")
+			img.logo(src="assets/logo.png")
+		button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" )
+			i.fas.fa-bars
+		.collapse.navbar-collapse#navbarSupportedContent()
+			ul.navbar-nav.mr-auto.flex-nowrap.pull-sm-right.center-v
+				li.nav-item()
+					a.nav-link(routerLink="/dashboard") Dashboard
+			ul.navbar-nav.ml-auto.flex-nowrap.pull-sm-left.center-v.d-none.d-sm-flex
+				li.nav-item.dropdown( )
+					a.nav-link#profileDropdown(href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+						p(data-toggle="tooltip" data-placement="top" title="Profil") O
+						.dropdown-menu.profile-dropdown.box.nopm.box-shadow(aria-labelledby="profileDropdown")
+							a.dropdown-item.tiny-small(routerLink="/profile") Profil
+							a.dropdown-item.tiny-small(routerLink="" "(click)"="authenticationService.logout()" style="color:red;margin-bottom:0.5em") Logout
