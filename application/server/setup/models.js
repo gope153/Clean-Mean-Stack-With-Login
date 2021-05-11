@@ -9,6 +9,8 @@ var userSchema = mongoose.Schema({
 		unique: true
 	},
 	salt: String,
+	partnerId: String,
+	rights: Number,
 	hashed_pwd: String,
 });
 
@@ -20,3 +22,14 @@ userSchema.methods = {
 mongoose.set('useCreateIndex', true);
 userSchema.index({ email: 1 });
 var create = mongoose.model('users', userSchema);
+
+
+var voucherSchema = mongoose.Schema({
+	voucher: String,
+	product: String,
+	used: Boolean,
+	partnerId: String,
+	used: [String]
+});
+
+var create = mongoose.model('vouchers', voucherSchema);

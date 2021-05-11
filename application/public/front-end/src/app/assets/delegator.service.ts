@@ -12,7 +12,7 @@ export class DelegatorService {
 	url: string;
 
 	constructor(public http: HttpClient) {
-		if (window.location.origin.indexOf('localhost') > -1) this.API_ENDPOINT = 'http://localhost:3000/'
+		if (window.location.origin.indexOf('localhost') > -1) this.API_ENDPOINT = 'http://localhost:5050/'
 		else this.API_ENDPOINT = window.location.origin + '/'
 	}
 

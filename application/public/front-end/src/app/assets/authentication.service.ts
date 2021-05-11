@@ -101,12 +101,17 @@ export class AuthenticationService {
 	*/
 
 	getUserIntern() {
+		console.log("get user Intern");
 		this.userService.getAll({}).subscribe(data => {
+			console.log("found user", data);
 			this.user = data;
 			if (this.deepEqual(this.user, data) != true) {
 				this.newUser.next(data);
 				this.newUser.subscribe(user => this.user = user)
 			}
+		}, err => {
+			console.log("not found user");
+			this.logout()
 		})
 	}
 
@@ -114,15 +119,14 @@ export class AuthenticationService {
 	* Create
 	*/
 
-	register(): Observable<any> {
-		const obs = new Observable(observer => {
-			this.userService.create(this.user).subscribe(data => {
-				observer.next({ success: true })
-			}, error => {
-				observer.next({ success: false })
-			})
-		});
-		return obs;
+	register(): void {
+		this.userService.create(this.user).subscribe((data) => {
+			window.localStorage.setItem('token', data.token);
+			this.getUserIntern()
+			this.router.navigateByUrl('/login')
+		}, error => {
+			console.log(error);
+		})
 
 	}
 

@@ -7,4 +7,6 @@
 			.form-group
 				input.form-control("[(ngModel)]"="authenticationService.user.password" type="password")
 			.form-group
-				button.btn.btn-primary("(click)"="authenticationService.login()") Login
+				button.btn.btn-primary("(click)"="authenticationService.login()") Login			
+			.form-group
+				button.btn.btn-primary("(click)"="authenticationService.register()") Register

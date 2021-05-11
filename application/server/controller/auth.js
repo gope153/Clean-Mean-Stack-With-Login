@@ -19,6 +19,8 @@ exports.getUser = function (req, res, next) {
 					if (!!data) {
 						req.user = data;
 						next();
+					} else {
+						res.status(404).end();
 					}
 				})
 			}
@@ -79,6 +81,7 @@ exports.createUser = async (req, res, next) => {
 
 exports.isCORS = function (req, res, next) {
 	var token = req.headers['x-access-token'];
+	console.log("is cors");
 	if (token) {
 		jwt.verify(token, 'secret', function (err, decoded) {
 			if (err) {
