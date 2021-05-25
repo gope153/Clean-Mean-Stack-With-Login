@@ -6,9 +6,11 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"dev": "concurrently npm:run:server npm:run:angular",
+		"test": "concurrently npm:run:node npm:run:angular",
 		"cypress:open": "npx cypress open",
 		"cypress:run": "npx cypress run",
 		"run:server": "nodemon",
+		"run:node": "node server.js",
 		"run:angular": "cd 'application/public/front-end' && ng serve"
 	},
 	"author": "",
