@@ -6,6 +6,7 @@ const userModel = mongoose.model('users');
 
 exports.getUser = function (req, res, next) {
 	var token = req.headers['x-access-token'];
+	console.log(token);
 	if (token) {
 		jwt.verify(token, 'secret', function (err, decoded) {
 			if (err) {
