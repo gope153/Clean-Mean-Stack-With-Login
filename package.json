@@ -4,9 +4,8 @@
 	"description": "",
 	"main": "server.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
 		"dev": "concurrently npm:run:server npm:run:angular",
-		"test": "concurrently npm:run:node npm:run:angular",
+		"testing": "concurrently npm:run:node npm:run:angular",
 		"cypress:open": "npx cypress open",
 		"cypress:run": "npx cypress run",
 		"run:server": "nodemon",
