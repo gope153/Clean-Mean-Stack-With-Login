@@ -12,5 +12,9 @@ jobs:
         with:
           node-version: '14'
       - run: npm install
+      - name: npm i inside directory
+        working-directory: application/public/front-end
+        run: npm install
+      - run: npm run dev
       - name: Cypress run
         uses: cypress-io/github-action@v2
