@@ -16,6 +16,6 @@ jobs:
         working-directory: application/public/front-end
         run: npm install
       - run: npm install @angular/cli
-      - run: npm run test
+      - run: npm run testing
       - name: Cypress run
         uses: cypress-io/github-action@v2
