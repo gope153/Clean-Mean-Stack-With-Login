@@ -16,8 +16,8 @@ jobs:
         working-directory: application/public/front-end
         run: npm install
       - run: npm install @angular/cli
-      - with: 
-          start: npm run testing
+      - run: npm run testing
+        with: 
           wait-on: "http://localhost:4200"
           wait-on-timeout: 120
       - name: Cypress run
