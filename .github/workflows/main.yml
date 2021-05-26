@@ -15,6 +15,6 @@ jobs:
       - name: npm i inside directory
         working-directory: application/public/front-end
         run: npm install
-      - run: npm run dev
+      - run: npm run test
       - name: Cypress run
         uses: cypress-io/github-action@v2
