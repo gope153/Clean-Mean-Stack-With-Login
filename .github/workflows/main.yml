@@ -17,5 +17,7 @@ jobs:
         run: npm install
       - run: npm install @angular/cli
       - run: npm run testing
+        wait-on: "http://localhost:3000"
+        wait-on-timeout: 120
       - name: Cypress run
         uses: cypress-io/github-action@v2
