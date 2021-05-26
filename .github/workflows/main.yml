@@ -16,6 +16,9 @@ jobs:
         working-directory: application/public/front-end
         run: npm install
       - run: npm install @angular/cli
-      - run: nohup npm run testing &
+      # - run: nohup npm run testing &
       - name: Cypress run
         uses: cypress-io/github-action@v2
+        with:
+          start: npm run testing
+          wait-on: 'http://localhost:4200'
