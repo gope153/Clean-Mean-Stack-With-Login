@@ -9,8 +9,8 @@
 		"cypress:open": "npx cypress open",
 		"cypress:run": "npx cypress run",
 		"run:server": "nodemon",
-		"run:node": "nohup node server.js",
-		"run:angular": "cd 'application/public/front-end' && nohup ng serve"
+		"run:node": "node server.js",
+		"run:angular": "cd 'application/public/front-end' && ng serve"
 	},
 	"author": "",
 	"license": "ISC",

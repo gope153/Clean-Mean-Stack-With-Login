@@ -47,4 +47,4 @@ npm ERR! Exit status 1
 [run:node] npm ERR!     /Users/markuskuhn/.npm/_logs/2021-05-26T09_56_14_738Z-debug.log
 [run:node] npm run run:node exited with code 1
 [run:angular] ? Port 4200 is already in use.
-Would you like to use a different port? (Y/n) [46D[46C
+Would you like to use a different port? (Y/n) [46D[46Cnpm run run:angular exited with code SIGHUP
