@@ -7,6 +7,14 @@ require('./../assets/extraFunctions')
 
 
 module.exports = {
+	getAllUser: async (req, res) => {
+		try {
+			let users = await userModel.find();
+			res.send({ list: users, success: true })
+		} catch (error) {
+			res.status(404).end()
+		}
+	},
 	getUser: (req, res) => {
 		console.info("CALLING", (new Error().stack.split("at ")[1]).trim());
 		res.send(req.user)
